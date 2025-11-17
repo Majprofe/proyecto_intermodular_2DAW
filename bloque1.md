@@ -238,7 +238,7 @@ GitHub Flow es un flujo de trabajo ligero y basado en ramas que soporta equipos 
 ### 🔄 El Flujo de GitHub Flow
 
 ```
-1. Crear rama desde main
+1. Crear rama desde develop
         ↓
 2. Añadir commits
         ↓
@@ -295,7 +295,7 @@ git push origin --delete feature/login-usuario
 
 - ✅ Una rama por funcionalidad/fix
 - ✅ Nombres descriptivos y concisos
-- ✅ Mantener ramas actualizadas con main
+- ✅ Mantener ramas actualizadas con develop
 - ✅ Ramas de corta duración (1-3 días máximo)
 - ✅ Eliminar ramas después del merge
 
