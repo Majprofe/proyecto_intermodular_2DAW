@@ -1,0 +1,38 @@
+title: Proyecto Intermodular 2DAW
+description: Desarrollo de Aplicaciones Web con Metodologías Ágiles e IA
+theme: jekyll-theme-cayman
+show_downloads: false
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+# Configuración de enlaces relativos
+relative_links:
+  enabled: true
+  collections: false
+
+# Navegación
+navigation:
+  - title: Inicio
+    url: /
+  - title: Bloque 1
+    url: /bloque1
+  - title: Bloque 2
+    url: /bloque2
+  - title: Bloque 3
+    url: /bloque3
+  - title: Recursos
+    url: /recursos
+
+# Información adicional
+author: Proyecto Intermodular 2DAW
+email: contacto@example.com
+github_username: Majprofe
+
+# Configuración de Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
