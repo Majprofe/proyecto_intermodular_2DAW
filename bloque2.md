@@ -10,17 +10,12 @@
 2. [Levantamiento de Requisitos](#2-levantamiento-de-requisitos)
    - [Técnicas de Elicitación](#-técnicas-de-elicitación)
    - [Entrevistas Efectivas](#-entrevistas-efectivas)
-   - [Análisis de Stakeholders](#-análisis-de-stakeholders)
-3. [User Stories y Épicas](#3-user-stories-y-épicas)
-   - [Formato de User Stories](#-formato-de-user-stories)
-   - [Criterios de Aceptación](#-criterios-de-aceptación)
-   - [Story Mapping](#-story-mapping)
-4. [Documentación Técnica](#4-documentación-técnica)
+   - [Análisis de Partes Interesadas](#-análisis-de-partes-interesadas)
+3. [Documentación Técnica](#3-documentación-técnica)
    - [Diagramas UML Esenciales](#-diagramas-uml-esenciales)
    - [Arquitectura de Solución](#-arquitectura-de-solución)
-   - [Definition of Done](#-definition-of-done-dod)
-5. [Priorización y Estimación](#5-priorización-y-estimación)
-6. [Ejercicios Prácticos](#6-ejercicios-prácticos)
+4. [Priorización y Estimación](#4-priorización-y-estimación)
+5. [Ejercicios Prácticos](#5-ejercicios-prácticos)
 
 ---
 
@@ -36,7 +31,7 @@ Problemas comunes:
 - ❌ Requisitos ambiguos o incompletos
 - ❌ No entender las necesidades reales del usuario
 - ❌ Cambios constantes sin gestión
-- ❌ Falta de comunicación con stakeholders
+- ❌ Falta de comunicación con partes interesadas
 - ❌ Requisitos no verificables
 
 Beneficios de hacerlo bien:
@@ -68,7 +63,7 @@ El levantamiento (o elicitación) de requisitos es el proceso de **descubrir** q
 
 ### 1. Entrevistas
 
-**Cuándo usar:** Con stakeholders clave, expertos del dominio
+**Cuándo usar:** Con partes interesadas clave, expertos del dominio
 
 **Tipos:**
 - **Estructuradas:** Preguntas predefinidas, formato formal
@@ -77,7 +72,7 @@ El levantamiento (o elicitación) de requisitos es el proceso de **descubrir** q
 
 **Ventajas:**
 - ✅ Información detallada y profunda
-- ✅ Construye relación con stakeholder
+- ✅ Construye relación con las partes interesadas
 - ✅ Permite aclarar dudas inmediatamente
 
 **Desventajas:**
@@ -129,7 +124,7 @@ El levantamiento (o elicitación) de requisitos es el proceso de **descubrir** q
 **Cuándo usar:** Para generar ideas, alinear visiones
 
 **Formato:**
-- Reunir stakeholders clave (5-10 personas)
+- Reunir partes interesadas clave (5-10 personas)
 - Facilitador neutral
 - Técnicas: Post-its, votación, agrupación
 
@@ -286,11 +281,11 @@ Usuario: "Necesito un botón de exportar"
 
 ---
 
-## 👥 Análisis de Stakeholders
+## 👥 Análisis de Partes Interesadas
 
-Los stakeholders son todas las personas que tienen interés o son afectadas por el proyecto.
+Las partes interesadas son todas las personas que tienen interés o son afectadas por el proyecto.
 
-### Identificar Stakeholders
+### Identificar Partes Interesadas
 
 **Tipos comunes:**
 - 🎯 **Usuario final:** Quien usa el sistema
@@ -317,10 +312,10 @@ Los stakeholders son todas las personas que tienen interés o son afectadas por 
          Alto Interés → Bajo Interés
 ```
 
-### Template de Stakeholder
+### Template de Parte Interesada
 
 ```markdown
-## Stakeholder: María García
+## Parte Interesada: María García
 
 **Rol:** Gerente de Ventas
 **Interés:** Alto - Usuario principal
@@ -342,292 +337,7 @@ Los stakeholders son todas las personas que tienen interés o son afectadas por 
 
 ---
 
-## 3. User Stories y Épicas
-
-Las User Stories son la forma ágil de capturar requisitos desde la perspectiva del usuario.
-
----
-
-## 📝 Formato de User Stories
-
-### Estructura Base
-
-```
-Como [tipo de usuario]
-Quiero [funcionalidad/objetivo]
-Para [beneficio/valor]
-```
-
-### Ejemplos Buenos vs Malos
-
-#### ❌ Malo
-
-```
-Como usuario
-Quiero un login
-Para entrar al sistema
-```
-
-*Problemas:*
-- Usuario muy genérico
-- No explica el valor real
-- Falta detalle
-
-#### ✅ Bueno
-
-```
-Como cliente registrado
-Quiero iniciar sesión con mi email y contraseña
-Para acceder a mi historial de pedidos y realizar nuevas compras de forma rápida
-```
-
-*Por qué es mejor:*
-- Usuario específico
-- Funcionalidad clara
-- Valor de negocio explícito
-
-### Componentes Completos de una User Story
-
-```markdown
-## US-001: Login de Cliente
-
-### Historia
-Como cliente registrado
-Quiero iniciar sesión con mi email y contraseña
-Para acceder a mi historial de pedidos y realizar compras rápidamente
-
-### Criterios de Aceptación
-- [ ] El formulario incluye campos de email y contraseña
-- [ ] Se valida formato de email
-- [ ] Contraseña se muestra oculta con opción de ver
-- [ ] Mensaje de error si credenciales incorrectas
-- [ ] Redirección a dashboard tras login exitoso
-- [ ] Opción "Recordarme" para mantener sesión
-- [ ] Link a "¿Olvidaste tu contraseña?"
-
-### Notas Técnicas
-- Endpoint: POST /api/auth/login
-- Autenticación: JWT con expiración de 7 días
-- Rate limiting: 5 intentos por minuto
-- Hash: bcrypt para contraseñas
-
-### Definition of Done
-- [ ] Código implementado y revisado
-- [ ] Tests unitarios (>80% cobertura)
-- [ ] Tests E2E del flujo de login
-- [ ] Documentación API actualizada
-- [ ] Probado en Chrome, Firefox, Safari
-- [ ] Responsive en móvil
-- [ ] Aprobado por PO
-
-### Estimación
-Story Points: 5
-Tiempo estimado: 1-2 días
-
-### Dependencias
-- US-000: Sistema de registro debe estar completo
-
-### Enlaces
-- Diseño en Figma: [link]
-- Épica padre: EP-01 Autenticación
-```
-
----
-
-## ✅ Criterios de Aceptación
-
-Los criterios de aceptación definen cuándo una User Story está completa. Deben ser:
-
-- **Específicos:** Sin ambigüedad
-- **Medibles:** Se puede verificar
-- **Alcanzables:** Técnicamente factible
-- **Relevantes:** Aportan valor
-- **Testeables:** Se pueden probar
-
-### Formatos
-
-#### 1. Checklist (Más común)
-
-```markdown
-## Criterios de Aceptación
-
-- [ ] Usuario puede subir imagen de perfil
-- [ ] Formatos aceptados: JPG, PNG, máx 5MB
-- [ ] Vista previa antes de guardar
-- [ ] Imagen se redimensiona automáticamente a 200x200px
-- [ ] Mensaje de confirmación al guardar
-```
-
-#### 2. Escenarios Given-When-Then (BDD)
-
-```gherkin
-Escenario 1: Subida exitosa de imagen
-  Dado que soy un usuario autenticado
-  Y estoy en mi página de perfil
-  Cuando selecciono una imagen JPG de 2MB
-  Y hago clic en "Guardar"
-  Entonces la imagen se sube exitosamente
-  Y veo un mensaje "Foto actualizada"
-  Y mi foto de perfil se actualiza
-
-Escenario 2: Archivo demasiado grande
-  Dado que soy un usuario autenticado
-  Cuando intento subir una imagen de 10MB
-  Entonces veo el error "Archivo muy grande (máx 5MB)"
-  Y la imagen no se sube
-
-Escenario 3: Formato no soportado
-  Dado que soy un usuario autenticado
-  Cuando intento subir un archivo PDF
-  Entonces veo el error "Formato no soportado (usa JPG o PNG)"
-  Y el archivo no se sube
-```
-
-### Validación de Criterios: Técnica SMART
-
-| Letra | Significado | Pregunta |
-|-------|-------------|----------|
-| **S** | Specific (Específico) | ¿Es claro y sin ambigüedad? |
-| **M** | Measurable (Medible) | ¿Podemos verificarlo objetivamente? |
-| **A** | Achievable (Alcanzable) | ¿Es técnicamente factible? |
-| **R** | Relevant (Relevante) | ¿Aporta valor al usuario? |
-| **T** | Testable (Testeable) | ¿Podemos escribir un test para ello? |
-
----
-
-## 🗺️ Story Mapping
-
-Story Mapping es una técnica para organizar User Stories visualmente y priorizar el desarrollo.
-
-### Estructura de un Story Map
-
-```
-[Actividad 1]     [Actividad 2]     [Actividad 3]
-     |                  |                  |
-[User Task 1.1]   [User Task 2.1]   [User Task 3.1]
-[User Task 1.2]   [User Task 2.2]   [User Task 3.2]
-[User Task 1.3]   [User Task 2.3]   [User Task 3.3]
-     ↓                  ↓                  ↓
-─────────────────────────────────────────────────── MVP (Release 1)
-[Story 1.1]       [Story 2.1]       [Story 3.1]
-[Story 1.2]       [Story 2.2]       
-─────────────────────────────────────────────────── Release 2
-[Story 1.3]       [Story 2.3]       [Story 3.2]
-[Story 1.4]                         [Story 3.3]
-```
-
-### Ejemplo: E-commerce
-
-```
-[Descubrir]    [Comprar]      [Recibir]      [Soporte]
-     |             |              |              |
-[Buscar]      [Añadir al    [Elegir envío] [Contactar]
-              carrito]
-[Filtrar]     [Ver carrito] [Pagar]        [Ver FAQ]
-[Ver detalle] [Checkout]    [Confirmar]    [Devoluciones]
-
-═══════════════════════════════════════════════════ MVP
-[US-01]       [US-05]        [US-10]
-Búsqueda      Añadir         Checkout
-básica        producto       básico
-              
-[US-02]       [US-06]        [US-11]
-Ver           Ver carrito    Paypal
-producto                     
-              [US-07]        
-              Actualizar
-              cantidad
-
-═══════════════════════════════════════════════════ v2.0
-[US-03]       [US-08]        [US-12]        [US-15]
-Filtros       Cupones        Múltiples      Chat
-avanzados     descuento      direcciones    soporte
-
-[US-04]       [US-09]        [US-13]        [US-16]
-Favoritos     Wish list      Tarjeta        Email
-                             crédito        tracking
-```
-
-### Pasos para crear un Story Map
-
-1. **Identificar el User Journey** (de izquierda a derecha)
-2. **Desglosar en actividades principales**
-3. **Añadir tareas de usuario bajo cada actividad**
-4. **Escribir User Stories específicas**
-5. **Priorizar verticalmente** (arriba = más importante)
-6. **Dibujar líneas de releases**
-7. **Validar con stakeholders**
-
----
-
-## 📐 Épicas
-
-Las Épicas son User Stories grandes que se descomponen en múltiples historias más pequeñas.
-
-### Estructura de una Épica
-
-```markdown
-# EP-01: Sistema de Autenticación
-
-## Descripción
-Implementar un sistema completo de autenticación y gestión de usuarios que 
-permita registro, login, recuperación de contraseña y gestión de perfil.
-
-## Valor de Negocio
-- Permitir identificación de usuarios
-- Base para personalización
-- Requisito para funcionalidades avanzadas
-
-## Objetivos Medibles
-- 80% de usuarios se registran exitosamente en primer intento
-- Login en <2 segundos
-- <5% solicitudes de recuperación de contraseña
-
-## User Stories Incluidas
-- [ ] US-001: Registro de usuario (5 pts)
-- [ ] US-002: Login con email/contraseña (5 pts)
-- [ ] US-003: Recuperar contraseña (3 pts)
-- [ ] US-004: Verificación de email (3 pts)
-- [ ] US-005: Editar perfil (5 pts)
-- [ ] US-006: Cambiar contraseña (2 pts)
-- [ ] US-007: Login con Google (8 pts)
-- [ ] US-008: Login con GitHub (8 pts)
-
-**Total:** 39 Story Points
-
-## Sprints Planificados
-- Sprint 1: US-001, US-002 (MVP)
-- Sprint 2: US-003, US-004
-- Sprint 3: US-005, US-006
-- Sprint 4: US-007, US-008 (OAuth)
-
-## Criterios de Aceptación de la Épica
-- [ ] Usuario puede registrarse y hacer login
-- [ ] Usuario puede recuperar acceso si olvida contraseña
-- [ ] Usuario puede gestionar su perfil
-- [ ] Sistema cumple requisitos de seguridad (OWASP)
-- [ ] Cobertura de tests >85%
-
-## Riesgos
-- Integración con OAuth puede ser compleja
-- Requisitos de seguridad estrictos
-- Validación de emails puede tener delays
-
-## Dependencias
-- Ninguna (es fundacional)
-```
-
-### Cuándo dividir una Épica
-
-Una épica debe dividirse cuando:
-- ✅ No cabe en un sprint (>13 story points)
-- ✅ Involucra múltiples equipos
-- ✅ Tiene objetivos claramente diferenciables
-- ✅ Parte de ella puede entregar valor independientemente
-
----
-
-## 4. Documentación Técnica
+## 3. Documentación Técnica
 
 Aunque Agile valora "software funcionando sobre documentación extensiva", cierta documentación es esencial.
 
@@ -856,131 +566,13 @@ Utilizaremos JSON Web Tokens (JWT) para autenticación.
 
 ---
 
-## ✅ Definition of Done (DoD)
+## 4. Priorización y Estimación
 
-La Definition of Done es un acuerdo compartido sobre qué significa "terminado".
+### Técnicas de Priorización
 
-### Niveles de DoD
+#### MoSCoW
 
-#### 1. DoD de Tarea
-
-```markdown
-## DoD: Implementar endpoint POST /api/users
-
-- [ ] Código escrito
-- [ ] Validación de inputs
-- [ ] Manejo de errores
-- [ ] Tests unitarios
-- [ ] Code review aprobado
-```
-
-#### 2. DoD de User Story
-
-```markdown
-## DoD: User Story
-
-- [ ] Todos los criterios de aceptación cumplidos
-- [ ] Código implementado según estándares
-- [ ] Code review completado
-- [ ] Tests unitarios (cobertura >80%)
-- [ ] Tests de integración
-- [ ] Sin bugs críticos
-- [ ] Documentación técnica actualizada
-- [ ] Validado por Product Owner
-- [ ] Desplegado en entorno de staging
-```
-
-#### 3. DoD de Sprint
-
-```markdown
-## DoD: Sprint
-
-- [ ] Todas las User Stories cumplen su DoD
-- [ ] Tests de regresión pasando
-- [ ] Performance aceptable (<2s carga)
-- [ ] Sin deuda técnica crítica documentada
-- [ ] Documentación de usuario actualizada
-- [ ] Demo exitosa con stakeholders
-- [ ] Retrospectiva completada
-- [ ] Code coverage >85%
-```
-
-### Template de DoD para tu Proyecto
-
-```markdown
-# Definition of Done - Proyecto [Nombre]
-
-## 1. Código
-
-- [ ] Implementado según User Story
-- [ ] Sigue guías de estilo (ESLint/Prettier)
-- [ ] Sin código comentado o debug logs
-- [ ] Variables y funciones con nombres descriptivos
-- [ ] Funciones pequeñas (<50 líneas)
-- [ ] Sin código duplicado significativo
-
-## 2. Tests
-
-- [ ] Tests unitarios escritos
-- [ ] Cobertura de código >80%
-- [ ] Tests de integración (si aplica)
-- [ ] Tests E2E para flujos críticos
-- [ ] Todos los tests pasando en CI
-
-## 3. Code Review
-
-- [ ] PR creado con descripción completa
-- [ ] Al menos 1 aprobación
-- [ ] Todos los comentarios resueltos
-- [ ] Sin conflictos de merge
-- [ ] CI checks pasando
-
-## 4. Documentación
-
-- [ ] README actualizado (si aplica)
-- [ ] Comentarios en código complejo
-- [ ] API docs actualizadas (Swagger/OpenAPI)
-- [ ] Changelog actualizado
-
-## 5. Calidad
-
-- [ ] Sin errores de linter
-- [ ] Sin warnings en consola
-- [ ] Accesibilidad básica (WCAG 2.1 Level A)
-- [ ] Responsive (mobile, tablet, desktop)
-- [ ] Probado en Chrome, Firefox, Safari
-
-## 6. Seguridad
-
-- [ ] Inputs validados y sanitizados
-- [ ] Sin datos sensibles en logs
-- [ ] Autenticación/autorización implementada
-- [ ] Sin vulnerabilidades conocidas (npm audit)
-
-## 7. Aceptación
-
-- [ ] Todos los criterios de aceptación cumplidos
-- [ ] Demostrado al Product Owner
-- [ ] Product Owner aprueba
-- [ ] Desplegado en ambiente de staging
-
-## 8. DevOps
-
-- [ ] Construye sin errores
-- [ ] Migraciones de DB documentadas
-- [ ] Variables de entorno documentadas
-- [ ] Rollback plan considerado
-```
-
----
-
-## 5. Priorización y Estimación
-
-### 🎯 Técnicas de Priorización
-
-#### 1. MoSCoW
-
-Clasifica requisitos en 4 categorías:
+Clasifica requisitos en 4 categorías para definir el alcance del proyecto:
 
 | Categoría | Significado | % Recomendado |
 |-----------|-------------|---------------|
@@ -989,33 +581,15 @@ Clasifica requisitos en 4 categorías:
 | **C**ould have | Deseable si hay tiempo | 10% |
 | **W**on't have (now) | Fuera del scope actual | 10% |
 
-**Ejemplo:**
-```
-MUST HAVE (MVP):
-- Login y registro
-- CRUD de productos
-- Carrito de compra
-- Checkout básico
+**Ejemplo aplicado:**
+- **MUST HAVE:** Login, CRUD de productos, Carrito, Checkout básico
+- **SHOULD HAVE:** Búsqueda y filtros, Recuperar contraseña
+- **COULD HAVE:** Wishlist, Reviews de productos
+- **WON'T HAVE:** Login social, Programa de puntos, Chat en vivo
 
-SHOULD HAVE:
-- Búsqueda y filtros
-- Recuperar contraseña
-- Email confirmación
+#### Matriz de Valor/Esfuerzo
 
-COULD HAVE:
-- Wishlist
-- Recomendaciones
-- Reviews de productos
-
-WON'T HAVE:
-- Login social
-- Programa de puntos
-- Chat en vivo
-```
-
----
-
-#### 2. Matriz de Valor/Esfuerzo
+Herramienta visual para priorizar basándose en dos ejes:
 
 ```
         Alto Valor
@@ -1030,98 +604,35 @@ WON'T HAVE:
    Bajo ← Esfuerzo → Alto
 ```
 
-**Ejemplo:**
-```
-🟢 HACER PRIMERO (Alto valor, Bajo esfuerzo):
-   - Login básico
-   - Listar productos
-   
-🟡 HACER DESPUÉS (Alto valor, Alto esfuerzo):
-   - Búsqueda avanzada
-   - Sistema de pagos
-   
-🟠 TAL VEZ (Bajo valor, Bajo esfuerzo):
-   - Dark mode
-   - Animaciones
-   
-🔴 EVITAR (Bajo valor, Alto esfuerzo):
-   - IA para recomendaciones personalizadas v1
-```
+### Técnicas de Estimación
 
----
+#### Planning Poker
 
-### 📏 Técnicas de Estimación
+Técnica colaborativa de estimación usando cartas con la secuencia de Fibonacci:
+- **Valores:** 0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, ∞, ?
+- **Story Points = Complejidad + Esfuerzo + Incertidumbre**
 
-#### 1. Planning Poker
+**Referencia rápida:**
+- 1-2 puntos: Cambios simples
+- 3-5 puntos: Funcionalidad estándar
+- 8-13 puntos: Feature compleja
+- 20+: Dividir en historias más pequeñas
 
-**Proceso:**
-1. Product Owner presenta User Story
-2. Equipo discute (max 5 min)
-3. Cada miembro elige una carta en secreto
-4. Todos revelan simultáneamente
-5. Si hay consenso → listo
-6. Si no → mayor y menor explican → repetir
+#### Velocity
 
-**Valores:** 0, ½, 1, 2, 3, 5, 8, 13, 20, 40, 100, ∞, ?
+Mide la capacidad del equipo para planificar sprints:
 
-```
-Story Points ≠ Horas
-Story Points = Complejidad + Esfuerzo + Incertidumbre
-```
-
-**Referencia:**
-```
-1 punto  = Cambiar texto en página
-2 puntos = Añadir campo a formulario simple
-3 puntos = Nueva página con CRUD básico
-5 puntos = Integración con API externa simple
-8 puntos = Feature compleja con múltiples componentes
-13 puntos= Integración compleja o incertidumbre alta
-```
-
----
-
-#### 2. T-Shirt Sizing
-
-Para estimación rápida inicial:
-
-| Tamaño | Story Points | Ejemplo |
-|--------|--------------|---------|
-| XS | 1 | Cambio de texto |
-| S | 2-3 | Formulario simple |
-| M | 5-8 | CRUD completo |
-| L | 13-20 | Feature compleja |
-| XL | 40+ | Épica (dividir) |
-
----
-
-#### 3. Velocity (Velocidad del equipo)
-
-**Cálculo:**
 ```
 Velocity = Story Points completados / Sprint
-
-Ejemplo Sprint 1: 18 puntos completados
-Ejemplo Sprint 2: 22 puntos completados
-Ejemplo Sprint 3: 20 puntos completados
-
-Velocity promedio = (18 + 22 + 20) / 3 = 20 puntos/sprint
 ```
 
-**Uso:**
-```
-Product Backlog total: 180 story points
-Velocity: 20 puntos/sprint
-Sprints necesarios: 180 / 20 = 9 sprints
-
-Con sprints de 2 semanas: 18 semanas (4.5 meses)
-```
+Ejemplo: Si tu equipo completa 20 puntos/sprint y el backlog tiene 180 puntos, necesitarás aproximadamente 9 sprints (4.5 meses con sprints de 2 semanas)
 
 ---
 
-## 6. Ejercicios Prácticos
+## 5. Ejercicios Prácticos
 
-### 📝 Ejercicio 1: Entrevista a Stakeholder
+### 📝 Ejercicio 1: Entrevista a Parte Interesada
 
 **🎯 Objetivo:** Practicar técnicas de elicitación  
 **⏱️ Duración:** 1 hora
@@ -1148,76 +659,7 @@ Eres contratado para desarrollar un sistema de reservas para un gimnasio local.
 
 ---
 
-### 📝 Ejercicio 2: Escribir User Stories
-
-**🎯 Objetivo:** Practicar escritura de User Stories con criterios de aceptación  
-**⏱️ Duración:** 2 horas
-
-**Proyecto:** Sistema de biblioteca digital
-
-**Tareas:**
-
-1. **Identificar usuarios:**
-   - Lector
-   - Bibliotecario
-   - Administrador
-
-2. **Escribir 10 User Stories** (mínimo 2 por rol):
-   ```
-   Ejemplo:
-   Como lector
-   Quiero buscar libros por título, autor o categoría
-   Para encontrar rápidamente lecturas de mi interés
-   ```
-
-3. **Para cada story:**
-   - Criterios de aceptación (mínimo 3)
-   - Notas técnicas
-   - Definition of Done
-   - Estimación
-
-4. **Validar con INVEST:**
-   - ¿Es independiente?
-   - ¿Es negociable?
-   - ¿Aporta valor?
-   - ¿Es estimable?
-   - ¿Es pequeña?
-   - ¿Es testeable?
-
----
-
-### 📝 Ejercicio 3: Story Mapping
-
-**🎯 Objetivo:** Crear un story map completo  
-**⏱️ Duración:** 2-3 horas
-
-**Proyecto:** App de delivery de comida
-
-**Tareas:**
-
-1. **Identificar el User Journey:**
-   ```
-   Descubrir → Ordenar → Rastrear → Recibir → Calificar
-   ```
-
-2. **Actividades principales** (5-7)
-
-3. **Tareas de usuario** bajo cada actividad (3-5 por actividad)
-
-4. **Escribir User Stories** específicas
-
-5. **Priorizar verticalmente**
-
-6. **Definir releases:**
-   - MVP (línea 1)
-   - v2.0 (línea 2)
-   - v3.0 (línea 3)
-
-7. **Presentar al equipo** y justificar priorización
-
----
-
-### 📝 Ejercicio 4: Diagramas UML
+### 📝 Ejercicio 2: Diagramas UML
 
 **🎯 Objetivo:** Documentar diseño técnico  
 **⏱️ Duración:** 2 horas
@@ -1252,39 +694,7 @@ Eres contratado para desarrollar un sistema de reservas para un gimnasio local.
 
 ---
 
-### 📝 Ejercicio 5: Definition of Done
-
-**🎯 Objetivo:** Crear DoD para tu proyecto  
-**⏱️ Duración:** 1 hora
-
-**Tareas:**
-
-1. **En equipo, definir:**
-   - DoD de tarea
-   - DoD de User Story
-   - DoD de Sprint
-
-2. **Considerar:**
-   - Estándares de código
-   - Testing
-   - Code review
-   - Documentación
-   - Performance
-   - Seguridad
-   - Accesibilidad
-
-3. **Validar:**
-   - ¿Es realista?
-   - ¿Es medible?
-   - ¿Todo el equipo está de acuerdo?
-
-4. **Documentar** en el README del proyecto
-
-5. **Revisar cada sprint** en la retrospectiva
-
----
-
-### 📝 Ejercicio 6: Priorización con MoSCoW
+### 📝 Ejercicio 3: Priorización con MoSCoW
 
 **🎯 Objetivo:** Practicar priorización de requisitos  
 **⏱️ Duración:** 1 hora
@@ -1328,18 +738,16 @@ Eres contratado para desarrollar un sistema de reservas para un gimnasio local.
 ## 📚 Recursos Adicionales
 
 ### Libros Recomendados
-- 📕 "User Story Mapping" - Jeff Patton
-- 📘 "Agile Estimating and Planning" - Mike Cohn
 - 📗 "Software Requirements" - Karl Wiegers
+- 📘 "Agile Estimating and Planning" - Mike Cohn
 
 ### Herramientas
-- **Story Mapping:** Miro, Mural, StoriesOnBoard
 - **Diagramas:** draw.io, PlantUML, Lucidchart
 - **Prototipos:** Figma, Sketch, Adobe XD
 - **Documentación:** Notion, Confluence, GitBook
+- **Entrevistas:** Miro, Mural (para workshops)
 
 ### Templates
-- [User Story Template](https://github.com/user-story-template)
 - [ADR Template](https://github.com/joelparkerhenderson/architecture-decision-record)
 - [Interview Guide Template](https://github.com/interview-guide)
 
@@ -1350,17 +758,13 @@ Eres contratado para desarrollar un sistema de reservas para un gimnasio local.
 Al finalizar este bloque, deberías ser capaz de:
 
 - [ ] Aplicar técnicas de elicitación de requisitos
-- [ ] Realizar entrevistas efectivas a stakeholders
-- [ ] Identificar y analizar stakeholders
-- [ ] Escribir User Stories con formato INVEST
-- [ ] Definir criterios de aceptación SMART
-- [ ] Crear Story Maps para priorización
-- [ ] Organizar trabajo en Épicas y Stories
-- [ ] Crear diagramas UML (Casos de Uso, Clases, Secuencia)
-- [ ] Documentar arquitectura de solución
-- [ ] Definir Definition of Done
+- [ ] Realizar entrevistas efectivas a partes interesadas
+- [ ] Identificar y analizar partes interesadas
+- [ ] Crear diagramas UML (Casos de Uso, Clases, Secuencia, Estados)
+- [ ] Documentar decisiones de arquitectura (ADR)
 - [ ] Aplicar técnicas de priorización (MoSCoW, Valor/Esfuerzo)
 - [ ] Estimar con Planning Poker y Story Points
+- [ ] Calcular velocity del equipo
 
 ---
 
